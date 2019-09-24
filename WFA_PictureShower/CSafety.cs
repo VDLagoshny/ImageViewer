@@ -283,11 +283,12 @@ namespace WFA_PictureShower
                         _correctFilesPathList.Add(filePath);
                 }
 
-                if (_typeList != null)
-                    _typeList.Clear();
+				// Checking
+				if (_typeList != null)
+					_typeList.Clear();
 
-                /// Checking of existing of corresponding files' types
-                if (_correctFilesPathList.Count == 0)
+				/// Checking of existing of corresponding files' types
+				if (_correctFilesPathList.Count == 0)
                 {
                     /// Output message about reason
                     _error = String.Format("{0}: {1}", _errorsList[1], folderPath.Substring(4));
