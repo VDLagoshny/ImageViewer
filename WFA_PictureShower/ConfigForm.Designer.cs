@@ -54,9 +54,9 @@
 			this.groupBox1.Controls.Add(this.textBox1);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Location = new System.Drawing.Point(5, 0);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Size = new System.Drawing.Size(501, 139);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
@@ -65,7 +65,7 @@
 			// 
 			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button2.Location = new System.Drawing.Point(457, 96);
-			this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.button2.Margin = new System.Windows.Forms.Padding(4);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(33, 28);
 			this.button2.TabIndex = 5;
@@ -76,10 +76,11 @@
 			// textBox2
 			// 
 			this.textBox2.Location = new System.Drawing.Point(8, 100);
-			this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(440, 22);
 			this.textBox2.TabIndex = 4;
+			this.textBox2.ModifiedChanged += new System.EventHandler(this.textBox2_ModifiedChanged);
 			// 
 			// label2
 			// 
@@ -95,7 +96,7 @@
 			// 
 			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button1.Location = new System.Drawing.Point(457, 37);
-			this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.button1.Margin = new System.Windows.Forms.Padding(4);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(33, 28);
 			this.button1.TabIndex = 2;
@@ -106,10 +107,11 @@
 			// textBox1
 			// 
 			this.textBox1.Location = new System.Drawing.Point(8, 39);
-			this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(440, 22);
 			this.textBox1.TabIndex = 1;
+			this.textBox1.ModifiedChanged += new System.EventHandler(this.textBox1_ModifiedChanged);
 			// 
 			// label1
 			// 
@@ -128,9 +130,9 @@
 			this.groupBox2.Controls.Add(this.button4);
 			this.groupBox2.Controls.Add(this.button3);
 			this.groupBox2.Location = new System.Drawing.Point(5, 139);
-			this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
 			this.groupBox2.Size = new System.Drawing.Size(501, 65);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
@@ -139,7 +141,7 @@
 			// 
 			this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.button4.Location = new System.Drawing.Point(391, 23);
-			this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.button4.Margin = new System.Windows.Forms.Padding(4);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(100, 28);
 			this.button4.TabIndex = 2;
@@ -151,7 +153,7 @@
 			// 
 			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.button3.Location = new System.Drawing.Point(283, 23);
-			this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.button3.Margin = new System.Windows.Forms.Padding(4);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(100, 28);
 			this.button3.TabIndex = 2;
@@ -168,10 +170,11 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximumSize = new System.Drawing.Size(527, 248);
 			this.MinimumSize = new System.Drawing.Size(527, 248);
 			this.Name = "ConfigForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Конфигурация";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfigForm_Closing);
 			this.Load += new System.EventHandler(this.ConfigForm_Load);
