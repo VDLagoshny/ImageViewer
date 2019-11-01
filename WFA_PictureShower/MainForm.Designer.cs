@@ -30,11 +30,7 @@
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,11 +44,14 @@
 			this.указатьКаталогИзображенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.выборЯзыкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox2.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -70,26 +69,6 @@
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuBar;
-			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.pictureBox1.ErrorImage = null;
-			this.pictureBox1.Image = global::WFA_PictureShower.Properties.Resources.Wallpaper;
-			this.pictureBox1.ImageLocation = "";
-			this.pictureBox1.InitialImage = null;
-			this.pictureBox1.Location = new System.Drawing.Point(9, 14);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(584, 347);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
-			this.pictureBox1.WaitOnLoad = true;
-			// 
 			// groupBox2
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -105,47 +84,6 @@
 			this.groupBox2.Size = new System.Drawing.Size(603, 116);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
-			// 
-			// button3
-			// 
-			this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button3.BackgroundImage = global::WFA_PictureShower.Properties.Resources.Rigth;
-			this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button3.Location = new System.Drawing.Point(357, 21);
-			this.button3.Margin = new System.Windows.Forms.Padding(4);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(45, 84);
-			this.button3.TabIndex = 2;
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
-			// button2
-			// 
-			this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button2.BackColor = System.Drawing.SystemColors.Window;
-			this.button2.BackgroundImage = global::WFA_PictureShower.Properties.Resources.Left;
-			this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button2.Location = new System.Drawing.Point(203, 21);
-			this.button2.Margin = new System.Windows.Forms.Padding(4);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(45, 84);
-			this.button2.TabIndex = 1;
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// button1
-			// 
-			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.button1.BackgroundImage = global::WFA_PictureShower.Properties.Resources.Start;
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button1.Location = new System.Drawing.Point(256, 21);
-			this.button1.Margin = new System.Windows.Forms.Padding(4);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(93, 84);
-			this.button1.TabIndex = 0;
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// toolStripMenuItem1
 			// 
@@ -212,8 +150,7 @@
 			// настройкиToolStripMenuItem
 			// 
 			this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.указатьКаталогИзображенийToolStripMenuItem,
-            this.выборЯзыкаToolStripMenuItem});
+            this.указатьКаталогИзображенийToolStripMenuItem});
 			this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
 			this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
 			this.настройкиToolStripMenuItem.Text = "Настройки";
@@ -240,11 +177,66 @@
 			this.справкаToolStripMenuItem.Text = "Справка";
 			this.справкаToolStripMenuItem.Click += new System.EventHandler(this.AboutProgramInfo_Click);
 			// 
-			// выборЯзыкаToolStripMenuItem
+			// button3
 			// 
-			this.выборЯзыкаToolStripMenuItem.Name = "выборЯзыкаToolStripMenuItem";
-			this.выборЯзыкаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-			this.выборЯзыкаToolStripMenuItem.Text = "Выбор языка";
+			this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.button3.BackgroundImage = global::WFA_PictureShower.Properties.Resources.Rigth;
+			this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button3.Location = new System.Drawing.Point(357, 21);
+			this.button3.Margin = new System.Windows.Forms.Padding(4);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(45, 84);
+			this.button3.TabIndex = 2;
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// button2
+			// 
+			this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.button2.BackColor = System.Drawing.SystemColors.Window;
+			this.button2.BackgroundImage = global::WFA_PictureShower.Properties.Resources.Left;
+			this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button2.Location = new System.Drawing.Point(203, 21);
+			this.button2.Margin = new System.Windows.Forms.Padding(4);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(45, 84);
+			this.button2.TabIndex = 1;
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// button1
+			// 
+			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.button1.BackgroundImage = global::WFA_PictureShower.Properties.Resources.Start;
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button1.Location = new System.Drawing.Point(256, 21);
+			this.button1.Margin = new System.Windows.Forms.Padding(4);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(93, 84);
+			this.button1.TabIndex = 0;
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuBar;
+			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pictureBox1.ErrorImage = null;
+			this.pictureBox1.Image = global::WFA_PictureShower.Properties.Resources.datacardjpg;
+			this.pictureBox1.ImageLocation = "";
+			this.pictureBox1.InitialImage = null;
+			this.pictureBox1.Location = new System.Drawing.Point(9, 14);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(584, 347);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
+			this.pictureBox1.WaitOnLoad = true;
 			// 
 			// MainForm
 			// 
@@ -265,10 +257,10 @@
 			this.Text = "Предлагаемые решения";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.groupBox1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.groupBox2.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -294,7 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem указатьКаталогИзображенийToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem выборЯзыкаToolStripMenuItem;
 	}
 }
 
