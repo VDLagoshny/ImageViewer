@@ -49,8 +49,16 @@ namespace WFA_PictureShower
                 if (SettingList.Count != 0)
                     SettingList.Clear();
 
-                foreach (var item in Settings.Default.SettingList)
-                    SettingList.Add(item);
+				if (Settings.Default.SettingList.Count != 0)
+				{
+					foreach (var item in Settings.Default.SettingList)
+						SettingList.Add(item);
+				}
+				else
+				{
+					SettingList.Add(@"jpg|");
+					SettingList.Add(@"exe|");
+				}
             }
             catch (Exception ex)
             {
