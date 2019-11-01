@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="CAddition.cs" />
     <Compile Include="CFolderDialog.cs" />
+    <Compile Include="CMistake.cs" />
     <Compile Include="ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>

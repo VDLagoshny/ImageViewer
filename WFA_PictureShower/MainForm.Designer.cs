@@ -48,6 +48,7 @@
 			this.указатьКаталогИзображенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.выборЯзыкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox2.SuspendLayout();
@@ -211,7 +212,8 @@
 			// настройкиToolStripMenuItem
 			// 
 			this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.указатьКаталогИзображенийToolStripMenuItem});
+            this.указатьКаталогИзображенийToolStripMenuItem,
+            this.выборЯзыкаToolStripMenuItem});
 			this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
 			this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
 			this.настройкиToolStripMenuItem.Text = "Настройки";
@@ -219,7 +221,7 @@
 			// указатьКаталогИзображенийToolStripMenuItem
 			// 
 			this.указатьКаталогИзображенийToolStripMenuItem.Name = "указатьКаталогИзображенийToolStripMenuItem";
-			this.указатьКаталогИзображенийToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+			this.указатьКаталогИзображенийToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
 			this.указатьКаталогИзображенийToolStripMenuItem.Text = "Конфигурация..";
 			this.указатьКаталогИзображенийToolStripMenuItem.Click += new System.EventHandler(this.SettingConfig_Click);
 			// 
@@ -238,6 +240,12 @@
 			this.справкаToolStripMenuItem.Text = "Справка";
 			this.справкаToolStripMenuItem.Click += new System.EventHandler(this.AboutProgramInfo_Click);
 			// 
+			// выборЯзыкаToolStripMenuItem
+			// 
+			this.выборЯзыкаToolStripMenuItem.Name = "выборЯзыкаToolStripMenuItem";
+			this.выборЯзыкаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.выборЯзыкаToolStripMenuItem.Text = "Выбор языка";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,6 +261,7 @@
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximumSize = new System.Drawing.Size(1359, 830);
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Предлагаемые решения";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.groupBox1.ResumeLayout(false);
@@ -285,6 +294,7 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem указатьКаталогИзображенийToolStripMenuItem;
-    }
+		private System.Windows.Forms.ToolStripMenuItem выборЯзыкаToolStripMenuItem;
+	}
 }
 

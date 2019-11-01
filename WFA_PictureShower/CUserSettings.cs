@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFA_PictureShower.Properties;
 
 namespace WFA_PictureShower
 {
-    /// <summary>
-    /// The class realises methods of work with user's settings
-    /// </summary>
-    class CUserSettings
+	/// <summary>
+	/// The class realises methods of work with user's settings
+	/// </summary>
+	public class CUserSettings
     {
         #region Parameters
         /// <summary>
@@ -45,23 +42,19 @@ namespace WFA_PictureShower
         /// true - output list contains data
         /// false - output list is empty
         /// </returns>
-        private bool OutputSettings()
+        private void OutputSettings()
         {
             try
             {
-                if (Settings.Default.SettingList.Count == 0)
-                    return false;
                 if (SettingList.Count != 0)
                     SettingList.Clear();
 
                 foreach (var item in Settings.Default.SettingList)
                     SettingList.Add(item);
-                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return false;
+				MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -73,24 +66,20 @@ namespace WFA_PictureShower
         /// true - saving data 
         /// false - there are no data for saving
         /// </returns>
-        private bool SaveSettings()
+        private void SaveSettings()
         {
             try
             {
-                if (SettingList.Count == 0)
-                    return false;
                 if (Settings.Default.SettingList.Count != 0)
                     Settings.Default.SettingList.Clear();
 
                 foreach (var item in SettingList)
                     Settings.Default.SettingList.Add(item);
                 Settings.Default.Save();
-                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return false;
+				MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -100,23 +89,17 @@ namespace WFA_PictureShower
         /// 2 - saving paths in user's settings
         /// </summary>
         /// <param name="flag">Message about result</param>
-        /// <returns>
-        /// true - settings were setted
-        /// false - settings were not setted
-        /// </returns>
-        public bool SetSettings(int flag)
+        public void SetSettings(int flag)
         {
-            bool _f = false;
             switch (flag)
             {
                 case 1:
-                    _f = OutputSettings();
+                    OutputSettings();
                     break;
                 case 2:
-                    _f = SaveSettings();
+                    SaveSettings();
                     break;
             }
-            return _f;
         }
     }
 }
