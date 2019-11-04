@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace WFA_PictureShower
@@ -44,7 +40,7 @@ namespace WFA_PictureShower
 
         /// <summary>
         /// The method of work folder's definition 
-        /// </summary>
+        /// </summary
         /// <param name="path">The path to the folder</param>
         /// <param name="firstIndex">The start index for cutting part of the path</param>
         /// <returns>

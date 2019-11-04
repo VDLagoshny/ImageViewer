@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Text.RegularExpressions;
 
 namespace WFA_PictureShower
 {
@@ -28,16 +24,16 @@ namespace WFA_PictureShower
         /// !!! List of all folder's files (use local parameter)
         /// </summary>
         private string[] _fullFilesPathList;
-        
-        /// <summary>
-        /// The parameter used for outputing mistakes messages
-        /// </summary>        
-        public string _error;
-        
-        /// <summary>
-        /// The property of _error list
-        /// </summary>
-        private List<string> _errorsList;
+
+		/// <summary>
+		/// The parameter used for outputing mistakes index
+		/// </summary>
+		public string _errorIndex;
+
+		/// <summary>
+		/// The property of _error list
+		/// </summary>
+		private List<string> _errorsList;
 
         /// <summary>
         /// The parameter used for storage of folders' path
@@ -78,14 +74,14 @@ namespace WFA_PictureShower
         /// </summary>
         public CSafety()
         {
-            _errorsList = new List<string>()
-            {
-                String.Format("The folder is not available. Check the path to the folder"),
-                String.Format("There are no any files with correct extension in the folder"),
-                String.Format("There are files with uncorrect extension"),
-                String.Format("The type of extension wasn't defined"),
-                String.Format("The file is not available. Check the path to the file")
-            };
+			_errorsList = new List<string>()
+			{
+				String.Format("Указанная папка не существует. Пожалуйста, проверьте путь к папке"),
+				String.Format("В папке не найдены файлы с некорректным расширением"),
+				String.Format("Найдены файлы с некорректным расширением"),
+				String.Format("Расширение не определено"),
+				String.Format("Указанный файл не существует. Пожалуйста, проверьте путь к файлу")
+			};
 
             cA = new CAddition();
         }
@@ -99,19 +95,19 @@ namespace WFA_PictureShower
         /// true - the folder exists
         /// false - the folder doesn't exist
         /// </returns>
-        private bool CheckingFoldersPath(string folderPath)
+        private bool CheckingFoldersPath(string folderPath, out string _errorIndex)
         {
             try
-            { 
-                _error = "";
+            {
+				_errorIndex = "";
                 if (Directory.Exists(folderPath))
                     return true;
-                _error = String.Format("{0}: {1}", _errorsList[0], folderPath); /// ???? outputing mistake from list
+				_errorIndex = String.Format("{0}: {1}", _errorsList[0], folderPath);
                 return false;
             }
             catch(Exception ex)
             {
-                _error = String.Format("{0}", ex.Message);
+				_errorIndex = String.Format("{0}", ex.Message);
                 return false;
             }
         }
@@ -125,19 +121,19 @@ namespace WFA_PictureShower
         /// true - the file exists
         /// false - the file doesn't exist
         /// </returns>
-        private bool CheckingFilesPath(string filePath)
+        private bool CheckingFilesPath(string filePath, out string _errorIndex)
         {
             try
             {
-                _error = "";
+				_errorIndex = "";
                 if (File.Exists(filePath))
                     return true;
-                _error = String.Format("{0}: {1}", _errorsList[0], filePath);
+				_errorIndex = String.Format("{0}: {1}", _errorsList[0], filePath);
                 return false;
             }
             catch(Exception ex)
             {
-                _error = String.Format("{0}", ex.Message);
+				_errorIndex = String.Format("{0}", ex.Message);
                 return false;
             }
         }
@@ -151,20 +147,20 @@ namespace WFA_PictureShower
         /// true - the quantity of files is bigger than 0
         /// false - the quantity of files is equal 0
         /// </returns>
-        private bool CheckingFilesQuantity(string folderPath)
+        private bool CheckingFilesQuantity(string folderPath, out string _errorIndex)
         {
             try
-            { 
-                _error = ""; 
+			{ 
+				_errorIndex = "";
                 _fullFilesPathList = Directory.GetFiles(folderPath);
                 if (_fullFilesPathList.Length != 0)
                     return true;
-                _error = String.Format("{0}: {1}", _errorsList[1], folderPath);
+				_errorIndex = String.Format("{0}: {1}", _errorsList[1], folderPath);
                 return false;
             }
             catch (Exception ex)
-            {
-                _error = String.Format("{0}", ex.Message);
+			{
+                _errorIndex = String.Format("{0}", ex.Message);
                 return false;
             }
         }
@@ -176,16 +172,17 @@ namespace WFA_PictureShower
         /// <returns>
         /// The result is file's extension, string type
         /// </returns>
-        private string ExtensionDefinition(string filePath)
+        private string ExtensionDefinition(string filePath, out string _errorIndex)
         {
             try
-            { 
-                 _fileInfo = new FileInfo(filePath);
+			{ 
+				_errorIndex = "";
+				 _fileInfo = new FileInfo(filePath);
                 return _fileInfo.Extension;
             }
             catch (Exception ex)
-            {
-                _error = String.Format("{0}", ex.Message);
+			{
+                _errorIndex = String.Format("{0}", ex.Message);
                 return "";
             }
         }
@@ -201,17 +198,17 @@ namespace WFA_PictureShower
         /// true - all checkings are passed
         /// false - any checkings aren't passed 
         /// </returns>
-        private bool CheckingFolder(string folderPath)
+        private bool CheckingFolder(string folderPath, out string _errorIndex)
         {
             try
             {
-                if (CheckingFoldersPath(folderPath))
-                    if (CheckingFilesQuantity(folderPath)) return true;
+                if (CheckingFoldersPath(folderPath, out _errorIndex))
+                    if (CheckingFilesQuantity(folderPath, out _errorIndex)) return true;
                 return false;
             }
             catch (Exception ex)
-            {
-                _error = String.Format("{0}", ex.Message);
+			{
+                _errorIndex = String.Format("{0}", ex.Message);
                 return false;
             }
         }
@@ -226,18 +223,18 @@ namespace WFA_PictureShower
         /// "extension" - file's extension 
         /// "" - checking isn't passed
         /// </returns>
-        private string CheckingFile(string filePath)
+        private string CheckingFile(string filePath, out string _errorIndex)
         {
             try
             {
-                if (CheckingFilesPath(filePath))
-                    return ExtensionDefinition(filePath);
-                _error = String.Format("{0}: {1}", _errorsList[4], cA.StringReverse(filePath));
+                if (CheckingFilesPath(filePath, out _errorIndex))
+                    return ExtensionDefinition(filePath, out _errorIndex);
+
                 return "";
             }
             catch (Exception ex)
-            {
-                _error = String.Format("{0}", ex.Message);
+			{
+                _errorIndex = String.Format("{0}", ex.Message);
                 return "";
             }
         }
@@ -252,7 +249,7 @@ namespace WFA_PictureShower
         /// false - otherwise 
         /// The method creates list of files of corresponding types
         /// </returns>
-        public bool CheckingFoldersVerification(string folderPath)
+        public bool CheckingFoldersVerification(string folderPath, out string _errorIndex)
         {
             try
             {
@@ -275,22 +272,23 @@ namespace WFA_PictureShower
                 }
 
                 /// Checking folder and files in it
-                if (!CheckingFolder(folderPath.Substring(4)))
+                if (!CheckingFolder(folderPath.Substring(4), out _errorIndex))
                     return false;
                 foreach (var filePath in Directory.GetFiles(folderPath.Substring(4)))
                 {
-                    if (_typeList.IndexOf(CheckingFile(filePath).ToLower()) != -1)
+                    if (_typeList.IndexOf(CheckingFile(filePath, out _errorIndex).ToLower()) != -1)
                         _correctFilesPathList.Add(filePath);
                 }
 
-                if (_typeList != null)
-                    _typeList.Clear();
+				// Checking
+				if (_typeList != null)
+					_typeList.Clear();
 
-                /// Checking of existing of corresponding files' types
-                if (_correctFilesPathList.Count == 0)
+				/// Checking of existing of corresponding files' types
+				if (_correctFilesPathList.Count == 0)
                 {
-                    /// Output message about reason
-                    _error = String.Format("{0}: {1}", _errorsList[1], folderPath.Substring(4));
+					/// Output message about reason
+					_errorIndex = String.Format("{0}: {1}", _errorsList[1], folderPath.Substring(4));
                     return false;
                 }
 
@@ -323,8 +321,8 @@ namespace WFA_PictureShower
                 return true;
             }
             catch (Exception ex)
-            {
-                _error = String.Format("{0}", ex.Message);
+			{
+                _errorIndex = String.Format("{0}", ex.Message);
                 return false;
             }
         }

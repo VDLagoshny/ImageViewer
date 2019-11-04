@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WFA_PictureShower
@@ -17,8 +13,6 @@ namespace WFA_PictureShower
         /// The initialition of class FolderBrowserDialog's instance
         /// </summary>
         private FolderBrowserDialog _fbd;
-        //private OpenFileDialog _ofd;
-        //private CSafety _cS;
         #endregion
 
         /// <summary>
@@ -39,15 +33,15 @@ namespace WFA_PictureShower
             {
                 using (_fbd = new FolderBrowserDialog())
                 {
-                    _fbd.Description = "Please, choose folder:";
-                    if (_fbd.ShowDialog() == DialogResult.OK)
+					_fbd.Description = "Пожалуйста, выберите папку:";
+					if (_fbd.ShowDialog() == DialogResult.OK)
                         return String.Format("{0}", _fbd.SelectedPath);
                     return "";
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return "";
             }
         }

@@ -137,6 +137,7 @@
 			this.MaximumSize = new System.Drawing.Size(527, 248);
 			this.MinimumSize = new System.Drawing.Size(527, 248);
 			this.Name = "InformationForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Информация о программе";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
