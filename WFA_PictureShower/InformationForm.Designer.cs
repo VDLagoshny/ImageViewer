@@ -30,12 +30,14 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationForm));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.button1 = new System.Windows.Forms.Button();
+			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
@@ -45,63 +47,65 @@
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Location = new System.Drawing.Point(4, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(500, 133);
+			this.groupBox1.Size = new System.Drawing.Size(500, 132);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label5.Location = new System.Drawing.Point(413, 97);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(31, 13);
+			this.label5.TabIndex = 4;
+			this.label5.Text = "1.1.0";
+			// 
 			// label4
 			// 
-			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(8, 74);
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label4.Location = new System.Drawing.Point(413, 112);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(469, 17);
+			this.label4.Size = new System.Drawing.Size(81, 13);
 			this.label4.TabIndex = 3;
-			this.label4.Text = "            НКВД СССР «Дальстрой», г. Магадан, ул. Ленина, д.4, 670995";
+			this.label4.Text = "Лагошный В.Д.";
 			// 
 			// label3
 			// 
-			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(112, 57);
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label3.Location = new System.Drawing.Point(289, 97);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(371, 17);
+			this.label3.Size = new System.Drawing.Size(103, 13);
 			this.label3.TabIndex = 2;
-			this.label3.Text = "Главное Управление строительства Дальнего Севера ";
+			this.label3.Text = "Версия программы:";
 			// 
 			// label2
 			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(221, 40);
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label2.Location = new System.Drawing.Point(291, 112);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(262, 17);
+			this.label2.Size = new System.Drawing.Size(92, 13);
 			this.label2.TabIndex = 1;
-			this.label2.Text = "Oрдена Трудового Красного Знамени ";
+			this.label2.Text = "Спроектировано:";
 			// 
 			// label1
 			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(8, 18);
+			this.label1.Location = new System.Drawing.Point(6, 18);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(159, 17);
+			this.label1.Size = new System.Drawing.Size(155, 17);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Выполнено по заказу: ";
+			this.label1.Text = "Выполнено по заказу:";
 			// 
 			// groupBox2
 			// 
@@ -151,9 +155,11 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Label label1;
+		private System.ComponentModel.BackgroundWorker backgroundWorker1;
+		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
 	}
 }
